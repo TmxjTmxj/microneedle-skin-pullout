@@ -1,0 +1,130 @@
+{
+  "analysis": {
+    "contact": {
+      "normal": "Hard Contact",
+      "sliding": "finite/general contact",
+      "tangential_friction": 0.38
+    },
+    "field_outputs": [
+      "U",
+      "S",
+      "LE",
+      "CSTRESS/CPRESS",
+      "CSTATUS"
+    ],
+    "history_outputs": [
+      "RP U3",
+      "RP RF3",
+      "ALLKE",
+      "ALLIE",
+      "ALLAE",
+      "ALLVD"
+    ],
+    "steps": [
+      {
+        "name": "Insertion",
+        "target_rp_u3_mm": -1.35,
+        "time_s": 0.1
+      },
+      {
+        "name": "Holding",
+        "target_rp_u3_mm": -1.35,
+        "time_s": 0.18
+      },
+      {
+        "name": "Pull_out",
+        "target_rp_u3_mm": 0.2,
+        "time_s": 0.16
+      }
+    ],
+    "type": "Abaqus/Explicit"
+  },
+  "created": "2026-05-29 17:06:06",
+  "mesh": {
+    "explicit_mass_scaling_target_dt_s": 1e-06,
+    "needle_elements": 7974,
+    "needle_nodes": 2083,
+    "needle_seed_mm": 0.055,
+    "skin_channel_seed_mm": 0.055,
+    "skin_elements": 5967,
+    "skin_global_seed_mm": 0.22,
+    "skin_nodes": 6970
+  },
+  "needle_model": {
+    "axis": "STEP Y axis reconstructed as model Z axis after assembly rotation",
+    "barb_overhang_mm": 0.0955,
+    "barb_radius_mm": 0.1955,
+    "lead_cone_length_mm": 0.73,
+    "modeling": "Meshed solid contact shape constrained as rigid body to RP",
+    "rear_locking_feature": "Flat annular shoulder from barb radius to shaft radius; pull-out is opposite the easy insertion cone.",
+    "shaft_radius_mm": 0.1,
+    "source": "Self-locking needle.STEP",
+    "source_size": [
+      100.0,
+      53594.10363948922,
+      391.04322496106505
+    ],
+    "source_unit": "um"
+  },
+  "skin_model": {
+    "mesh_strategy": "Swept reduced-integration solid mesh where Abaqus permits; local fine seeding around the puncture channel.",
+    "pilot_channel_radius_mm": 0.112,
+    "reason_for_channel": "Represents the puncture path made by the sharp tip so the pull-out/self-locking response can be isolated.",
+    "rebuilt_coupon": "annular cylindrical coupon",
+    "rebuilt_coupon_mm": [
+      3.6,
+      3.6,
+      2.0
+    ],
+    "source": "skin.STEP",
+    "source_size_mm": [
+      200.00000000000003,
+      100.0,
+      200.0
+    ],
+    "source_unit": "mm"
+  },
+  "step_files": {
+    "Self-locking needle.STEP": {
+      "file": "Self-locking needle.STEP",
+      "high": [
+        100.0,
+        53594.10363948922,
+        195.52161248053253
+      ],
+      "low": [
+        0.0,
+        0.0,
+        -195.52161248053253
+      ],
+      "point_count": 24,
+      "size": [
+        100.0,
+        53594.10363948922,
+        391.04322496106505
+      ],
+      "unit": "um"
+    },
+    "skin.STEP": {
+      "file": "skin.STEP",
+      "high": [
+        99.99999999999999,
+        100.0,
+        99.99999999999999
+      ],
+      "low": [
+        -100.00000000000004,
+        0.0,
+        -100.00000000000001
+      ],
+      "point_count": 27,
+      "size": [
+        200.00000000000003,
+        100.0,
+        200.0
+      ],
+      "unit": "mm"
+    }
+  },
+  "unit_system": "mm-N-s-tonne-MPa"
+}

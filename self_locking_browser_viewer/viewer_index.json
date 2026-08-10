@@ -1,0 +1,6 @@
+{
+  "stress": "models/self-locking-needle-stress",
+  "strain": "models/self-locking-needle-strain",
+  "displacement": "models/self-locking-needle-displacement",
+  "contact-pressure": "models/self-locking-needle-contact-pressure"
+}

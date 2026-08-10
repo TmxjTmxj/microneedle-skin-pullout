@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "name": "Self-locking Needle stress",
+    "prompt": "Self-locking microneedle insertion, holding and pull-out in layered Ogden viscoelastic skin.",
+    "solver": "Abaqus/Explicit",
+    "model": "Rigid RP-controlled barbed/self-locking needle with annular layered skin coupon",
+    "source": "self_locking_needle_pullout.py"
+  },
+  "connection": {
+    "status": "complete",
+    "message": "ODB exported to text-to-cae browser mesh format."
+  },
+  "inputs": {
+    "geometry": {
+      "needle": "Rigid self-locking needle reconstructed from STEP: shaft radius 0.100 mm, barb radius 0.1955 mm",
+      "skin": "Annular 3.6 mm diameter x 2.0 mm layered skin coupon with pilot puncture path"
+    },
+    "material": {
+      "skin": "Ogden hyperelastic + Prony viscoelastic layers",
+      "needle": "Rigid body controlled by RP"
+    },
+    "loads": {
+      "description": "Insertion, Holding, Pull-out RP displacement path",
+      "contact": "Hard general contact, friction 0.38"
+    },
+    "summary": [
+      {
+        "label": {
+          "en": "Max pull-out force",
+          "zh": "\u6700\u5927\u62d4\u51fa\u529b"
+        },
+        "value": {
+          "en": "0.1818 N",
+          "zh": "0.1818 N"
+        }
+      },
+      {
+        "label": {
+          "en": "Retention force",
+          "zh": "\u4fdd\u6301\u529b"
+        },
+        "value": {
+          "en": "0.0041 N",
+          "zh": "0.0041 N"
+        }
+      },
+      {
+        "label": {
+          "en": "Frames",
+          "zh": "\u5e27\u6570"
+        },
+        "value": {
+          "en": "72 exported frames",
+          "zh": "72 \u4e2a\u5bfc\u51fa\u5e27"
+        }
+      }
+    ]
+  },
+  "workflow": [
+    {
+      "step": "Clean",
+      "status": "complete",
+      "detail": "Old ordinary microneedle outputs removed."
+    },
+    {
+      "step": "Build",
+      "status": "complete",
+      "detail": "Self-locking needle and skin rebuilt from STEP-derived dimensions."
+    },
+    {
+      "step": "Solve",
+      "status": "complete",
+      "detail": "Insertion, holding, and pull-out Explicit analysis completed."
+    },
+    {
+      "step": "Export",
+      "status": "complete",
+      "detail": "ODB frames and RF-U data exported for browser viewing."
+    }
+  ],
+  "outputs": {
+    "status": "complete",
+    "job_name": "self_locking_pullout_explicit",
+    "odb": "self_locking_pullout_explicit.odb"
+  }
+}

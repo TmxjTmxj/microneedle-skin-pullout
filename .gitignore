@@ -1,0 +1,47 @@
+# --- Abaqus job artifacts (regenerable by running the pipeline) ---
+*.odb
+*.inp
+*.abq
+*.com
+*.dat
+*.fil
+*.lck
+*.log
+*.mdl
+*.msg
+*.pac
+*.prt
+*.res
+*.sel
+*.sim
+*.sta
+*.stt
+*.cae
+*.jnl
+*.rpy
+*.rec
+abaqus_run.*
+viewer_server.*
+abaqus*
+
+# --- Large browser-viewer mesh dumps (regenerate with export script) ---
+self_locking_browser_viewer/**/result_mesh.json
+
+# --- Local environment / privacy (NEVER commit these) ---
+*.env
+.env.*
+.env
+config.toml
+auth.json
+
+# --- OS / editor cruft ---
+Thumbs.db
+.DS_Store
+*.swp
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+
+# --- Post-process summaries containing absolute local paths ---
+*postprocess_summary.json
