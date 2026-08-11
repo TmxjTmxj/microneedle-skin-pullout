@@ -31,14 +31,22 @@ The whole workflow — geometry reconstruction from STEP, meshing, material assi
 
 ## 🎬 Demo
 
-| | |
-|---|---|
-| **演示视频** | `演示视频.mp4` (screen recording of the browser viewer showing the full insertion → holding → pull-out) |
-| **力-位移曲线** | `self_locking_force_displacement_curve.svg` / `.html` / `.csv` |
+**完整仿真过程（插入 → 保持 → 拔出，浏览器 3D 可视化）：**
+
+<video src="演示视频.mp4" controls="controls" width="720"></video>
+
+*屏幕录制：倒刺微针插入三层皮肤 → 保持 → 拔出的完整显式动力学过程*
+
+**力-位移曲线（自锁机理的关键证据）：**
 
 ![Max pull-out force 0.1818 N](self_locking_force_displacement_curve.svg)
 
 *Force (RP reaction, N) vs displacement (mm) across the three phases. The peak on the left is the barb's mechanical interlock during pull-out.*
+
+| 资源 | 说明 |
+|------|------|
+| `演示视频.mp4` | 完整仿真 3D 可视化（插入 → 保持 → 拔出） |
+| `self_locking_force_displacement_curve.svg/.html/.csv` | 力-位移曲线（0.18N 峰值 = 倒刺自锁） |
 
 ## 🚀 Quick Start
 
