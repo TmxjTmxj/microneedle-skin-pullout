@@ -39,9 +39,39 @@ The whole workflow — geometry reconstruction from STEP, meshing, material assi
 
 **力-位移曲线（自锁机理的关键证据）：**
 
-![Max pull-out force 0.1818 N](self_locking_force_displacement_curve.svg)
+![Force-displacement curve](self_locking_force_displacement_curve.svg)
 
-*Force (RP reaction, N) vs displacement (mm) across the three phases. The peak on the left is the barb's mechanical interlock during pull-out.*
+*Force (RP reaction, N) vs displacement (mm) across the three phases. The sharp peak on pull-out is the barb's mechanical interlock with the skin — "easy to insert, hard to extract".*
+
+### Field results (pull-out phase, t ≈ 301 ms)
+
+| Stress (S, Mises) | Strain (LE) |
+|:---:|:---:|
+| ![Stress contour](docs/screenshot_stress.png) | ![Strain contour](docs/screenshot_strain.png) |
+
+| Displacement (U) | Contact pressure (CPRESS) |
+|:---:|:---:|
+| ![Displacement contour](docs/screenshot_displacement.png) | ![Contact pressure contour](docs/screenshot_contact-pressure.png) |
+
+*Rendered in the **text-to-cae viewer** (interactive 3D browser scenes exported from the ODB — rotate, zoom, play the animation, and read the field legend).*
+
+## 🖥️ Interactive Viewer
+
+The field plots above come from the **text-to-cae viewer** — a browser-based 3D result viewer for Abaqus ODBs (part of the CAE-Agent-Hub ecosystem used during this project). The exported scenes live in `self_locking_browser_viewer/`.
+
+To view them interactively:
+
+```bash
+# 1. Start the viewer (or use your own text-to-cae viewer installation)
+cd text-to-cae/viewer
+npm install
+npm run dev          # serves at http://127.0.0.1:4178
+
+# 2. Open a scene, e.g. the stress field
+start http://127.0.0.1:4178/?caeDir=models/self-locking-needle-stress
+```
+
+Available scenes: `self-locking-needle-stress` · `-strain` · `-displacement` · `-contact-pressure`. Each contains the full 72-frame animation (Insertion → Holding → Pull-out), the tool (needle) model, and the force–displacement history.
 
 | 资源 | 说明 |
 |------|------|
